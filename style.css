@@ -85,18 +85,24 @@ section {
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-}
 
+}
+svg{
+    width: 20px;
+    height: 20px;
+    /* background-color: #03A062; */
+}
 @media(max-width : 600px){
-    #hero{
+    section{
         display: flex;
         flex-direction: column;
     }
     #image{
         width: 300px;
         height: 300px;
+        display: none;
     }
     #hero>div>h1{
     font-size: 2rem;
