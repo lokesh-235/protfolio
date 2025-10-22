@@ -65,11 +65,13 @@ nav ul li a:hover {
 
 #hero>div>h1{
     font-size: 4rem;
+    color: #00ff88;
 }
 #hero>div>h2{
     display: inline;
-    border-right : 4px solid #03A062;
+    border-right : 4px solid #00ff88;
     padding-right: 10px;
+    color: #00ff88;
 }
 
 #image{
