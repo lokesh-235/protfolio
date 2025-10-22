@@ -40,7 +40,7 @@ function draw() {
 }
 
 // run the animation
-setInterval(draw, 33);
+setInterval(draw, 10);
 
 // resize canvas when window changes
 window.addEventListener("resize", () => {
