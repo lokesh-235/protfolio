@@ -91,10 +91,13 @@ section {
     align-items: center;
 
 }
+
+
 svg{
-    width: 20px;
-    height: 20px;
-    /* background-color: #03A062; */
+    width: 30px;
+    height: 30px;
+    
+    
 }
 @media(max-width : 800px){
     section{
