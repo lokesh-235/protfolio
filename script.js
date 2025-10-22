@@ -183,6 +183,11 @@ myImage.addEventListener('load', animate);
 image.addEventListener('mouseenter', animate);
 }
 
+else{
+  image.style.display = 'none';
+  canvas.style.display = 'none';
+}
+
 
 
 

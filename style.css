@@ -110,7 +110,7 @@ svg{
     font-size: 2rem;
 }
 
-/* #matrix{
-    display: none;
-} */
+#matrix{
+    /* display: none; */
+}
 }
