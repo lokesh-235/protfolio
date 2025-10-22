@@ -3,8 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     background-color: black;
     color: #03A062;
@@ -28,8 +31,9 @@ nav {
     position: sticky;
     top: 0;
     background: rgba(0, 0, 0, 0.7);
-    padding: 15px 0;
+    padding: 10px 0;
     z-index: 10;
+    font-size: 30px;
 }
 
 nav ul {
@@ -56,19 +60,45 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 80px;
+    /* gap: 20px; */
+}
+
+#hero>div>h1{
+    font-size: 4rem;
+}
+#hero>div>h2{
+    display: inline;
+    border-right : 4px solid #03A062;
+    padding-right: 10px;
 }
 
 #image{
-    width: 40%;
-    height: 60%;
+    width: 600px;
+    height: 600px;
     cursor: pointer;
     border-radius: 50%;
 }
 section {
-    height: 95vh;
-    border: 5px dashed #03A062;
+    height: 90vh;
+    /* border: 5px dashed #03A062; */
     margin: 40px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width : 600px){
+    #hero{
+        display: flex;
+        flex-direction: column;
+    }
+    #image{
+        width: 300px;
+        height: 300px;
+    }
+    #hero>div>h1{
+    font-size: 2rem;
+}
 }
