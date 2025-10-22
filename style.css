@@ -107,4 +107,7 @@ svg{
     #hero>div>h1{
     font-size: 2rem;
 }
+#matrix{
+    display: none;
+}
 }
