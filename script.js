@@ -2,51 +2,79 @@ const canvas = document.getElementById("matrix");
 const image = document.getElementById('image');
 const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+// const canvas = document.getElementById("matrix");
+// const ctx = canvas.getContext("2d");
 
-// characters for the Matrix effect
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+
+// Detect if mobile
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+// Matrix characters
 const chars = "01";
-
-// convert the string into an array
 const matrix = chars.split("");
 
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = [];
+// Adjust font size based on device
+const fontSize = isMobile ? 12 : 16;
+let columns = Math.floor(canvas.width / fontSize);
 
-// initialize drops
-for (let x = 0; x < columns; x++) {
-  drops[x] = 1;
-}
+// Each column has a drop (y position + speed)
+const drops = Array.from({ length: columns }, () => ({
+  y: Math.random() * canvas.height / fontSize,
+  speed: 1 + Math.random() * (isMobile ? 1.5 : 3),
+}));
 
-// draw the characters
-function draw() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+let lastFrameTime = 0;
+const fps = isMobile ? 25 : 50; // Lower FPS for mobile
+const frameInterval = 1000 / fps;
+
+function draw(timestamp) {
+  // Skip frames if running too fast
+  if (timestamp - lastFrameTime < frameInterval) {
+    requestAnimationFrame(draw);
+    return;
+  }
+  lastFrameTime = timestamp;
+
+  // Slight fade for trail
+  ctx.fillStyle = isMobile ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#03A062"; // green text
+  ctx.fillStyle = "#03A062";
   ctx.font = fontSize + "px monospace";
 
-  for (let i = 0; i < drops.length; i++) {
+  drops.forEach((drop, i) => {
     const text = matrix[Math.floor(Math.random() * matrix.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    ctx.fillText(text, i * fontSize, drop.y * fontSize);
+    drop.y += drop.speed;
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
+    // Reset drop when reaching bottom
+    if (drop.y * fontSize > canvas.height && Math.random() > 0.975) {
+      drop.y = 0;
+      drop.speed = 1 + Math.random() * (isMobile ? 1.5 : 3);
     }
-    drops[i]++;
-  }
+  });
+
+  requestAnimationFrame(draw);
 }
 
-// run the animation
-setInterval(draw, 3);
-
-// resize canvas when window changes
 window.addEventListener("resize", () => {
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+  resizeCanvas();
+  columns = Math.floor(canvas.width / fontSize);
+  drops.length = 0;
+  for (let i = 0; i < columns; i++) {
+    drops.push({
+      y: Math.random() * canvas.height / fontSize,
+      speed: 1 + Math.random() * (isMobile ? 1.5 : 3),
+    });
+  }
 });
+
+draw();
 
 
 

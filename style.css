@@ -102,9 +102,13 @@ svg{
     #image{
         width: 300px;
         height: 300px;
-        display: none;
+        /* display: none; */
     }
     #hero>div>h1{
     font-size: 2rem;
 }
+
+/* #matrix{
+    display: none;
+} */
 }
