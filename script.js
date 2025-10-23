@@ -1,5 +1,9 @@
 const canvas = document.getElementById("matrix");
 const image = document.getElementById('image');
+const autoType = document.getElementsByClassName('autotype');
+
+console.log(autoType[0].innerHTML);
+
 const ctx = canvas.getContext("2d");
 const myImage = new Image();
 function resizeCanvas() {
@@ -187,6 +191,28 @@ else{
   image.style.display = 'none';
   canvas.style.display = 'none';
 }
+
+//=========AUTO TYPE===============
+
+const role = "web developer";
+autoType[0].innerHTML = "";
+
+let i = 0;
+function autoTyping() {
+  if (i < role.length) {
+    autoType[0].innerHTML += role[i];
+    i++;
+  } 
+  else{
+    autoType[0].innerHTML = "";
+    i = 0;
+    setTimeout(autoTyping,600);
+  }
+}
+
+// run typing every 150ms for each character
+setInterval(autoTyping, 150);
+
 
 
 

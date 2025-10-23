@@ -96,14 +96,48 @@ section {
 svg{
     width: 30px;
     height: 30px;
-    
-    
+    padding-right: 10px;
 }
 
 a{
     text-decoration: none;
-    color: #03A062;
+    color: #00ff88;
 }
+input{
+    width: 400px;
+}
+.contactDetails h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ff88;
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.contactDetails svg {
+  width: 40px;
+  height: 40px;
+
+}
+
+.autotype {
+  display: inline-block;
+  /* padding: 6px 12px; */
+  border-right: 3px solid rgba(0,0,0,0.8);
+  box-sizing: border-box;
+  animation: blink-border 0.8s infinite;
+}
+
+@keyframes blink-border {
+  0%, 24% { border-right-color: rgba(0,0,0,0.8); }
+  25%, 74% { border-right-color: #00ff88; }
+
+  75%, 100% { border-right-color: #000000; }
+}
+
+
+
 @media(max-width : 800px){
     section{
         display: flex;
