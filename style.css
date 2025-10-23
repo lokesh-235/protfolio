@@ -75,8 +75,8 @@ nav ul li a:hover {
 }
 
 #image{
-    width: 60vh;
-    height: 60vh;
+    width: 20rem;
+    height: 20rem;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -107,7 +107,7 @@ a{
 form{
 text-align : center;
 border : 2px solid #00ff88;
-padding : 50px;
+padding : 30px;
 box-shadow:0 0 20px #00ff88;
 border-radius : 20px;
 margin-top: 20px;
@@ -230,5 +230,7 @@ iframe{
      a{
     text-decoration: none;
     color: #03A062;
-}
+     }
+
+     
 }
