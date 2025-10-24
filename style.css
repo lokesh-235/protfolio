@@ -232,5 +232,8 @@ iframe{
     color: #03A062;
      }
 
+     form{
+        padding: 10px;
+     }
      
 }
