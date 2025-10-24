@@ -111,6 +111,15 @@ padding : 30px;
 box-shadow:0 0 20px #00ff88;
 border-radius : 20px;
 margin-top: 20px;
+/* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0.6px);
+-webkit-backdrop-filter: blur(0.6px);
+/* border: 1px solid rgba(255, 255, 255, 0.8); */
 }
 
 .input-group{
@@ -234,6 +243,9 @@ iframe{
 
      form{
         padding: 10px;
+
      }
-     
+     .input-group input,.input-group textarea{
+  min-width:0.5rem;
+     }
 }
