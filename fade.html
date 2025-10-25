@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade-in {
+            width: 200px;
+            height: 500px;
+  opacity: 0;
+  transform: translateX(-50px); /* start slightly below */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateX(0); /* move to original position */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+    <div class="fade-in">helloooo</div>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1, // 10% of element visible
+  rootMargin: "0px 0px -50px 0px" // triggers slightly before fully visible
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    appearOnScroll.unobserve(entry.target); // stop observing after visible
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+    </script>
+</body>
+</html>

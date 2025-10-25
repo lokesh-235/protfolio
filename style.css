@@ -45,22 +45,58 @@ nav ul {
 nav ul li a {
     color: #03A062;
     text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+    
     transition: color 0.3s;
+    display: inline-block;
+}
+
+
+
+nav ul li a {
+  position: relative;
+  display: inline-block; /* keeps the width equal to text only */
+  padding: 5px 10px; /* optional spacing */
+  text-decoration: none;
+  color: #03A062;
+  font-size: 20px;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
     color: #00ff88;
 }
 
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #00ff88;
+  transition: width 0.3s ease-in-out;
+}
+
+/* animate underline only on hover */
+nav ul li a:hover::before {
+  width: 100%;
+}
+
 /* Section styles */
-#hero{
+.fade-in{
     height: 85vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     /* gap: 20px; */
+      opacity: 0;
+  transform: translateX(-50px); /* start slightly below */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateX(0); /* move to original position */
 }
 
 #hero>div>h1{
@@ -89,7 +125,6 @@ section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 
@@ -143,6 +178,8 @@ backdrop-filter: blur(0.6px);
   border-color:#00ff88;
   box-shadow:0 0 8px #00ff88;
 }
+
+
 
 .input-group label{
   position:absolute;

@@ -214,6 +214,28 @@ function autoTyping() {
 setInterval(autoTyping, 150);
 
 
+//================smooth loading while scrolling effect======================
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1, // 10% of element visible
+  rootMargin: "0px 0px -50px 0px" // triggers slightly before fully visible
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    appearOnScroll.unobserve(entry.target); // stop observing after visible
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
 
 
