@@ -116,7 +116,7 @@ nav ul li a:hover::before {
     cursor: pointer;
     border-radius: 50%;
 }
-section {
+#about,#hero {
     height: 90vh;
     /* border: 5px dashed #03A062; */
     margin: 40px;
@@ -285,4 +285,221 @@ iframe{
      .input-group input,.input-group textarea{
   min-width:0.5rem;
      }
+}
+
+
+/* === SKILLS SECTION (GRID & RESPONSIVE BY DEFAULT) === */
+
+#skills {
+  min-height: 110vh;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 80px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0 0 20px #00ff88; */
+  text-align: center;
+ /* ✅ creates space between contact and skills */
+}
+
+/* Skill switch buttons */
+.skillSection {
+  width: 100vw;
+  /* border: 2px solid #00ff88; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.skillSection button {
+  max-width: 250px;
+  background: transparent;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.skillSection button:hover {
+  background: #00ff88;
+  color: black;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+/* Container for grid sections */
+.skillContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID for skills */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  /* overflow-y: auto; */
+}
+
+/* Each skill card */
+.skill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #00ff88;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ff88;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px #00ff88;
+}
+
+.skill img {
+  width: 100%;
+  max-height: 70%;
+  border-radius: 15px;
+  padding: 2px;
+  margin-bottom: 10px;
+
+  
+}
+
+.skill h2 {
+  color: #00ff88;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+/* === projects section === */
+
+.projects{
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  gap: 40px;
+  /* background: rgba(235, 232, 232, 0.308);
+  backdrop-filter: blur(5px); */
+  padding: 10px;
+}
+
+.projectsContainer{
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  border: 2px solid #00ff88;
+  justify-content: center;
+  place-items: center;
+
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
+  background-color: #00ff8880;
+  backdrop-filter: blur(2px);
+}
+
+.project{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  /* max-width: 200px; */
+  height: 100%;
+  border: 2px solid #00ff88;
+  padding-bottom: 10px ;
+  border-radius: 5px;
+  width: 50%;
+  background-color: #000000;
+  color: white;
+}
+
+.projects h2{
+  color: #00ff88;
+  /* padding: 10px; */
+}
+
+.project h3{
+  /* padding: 10px; */
+}
+
+.project img{
+  width: 100%;
+  height: 50%;
+}
+
+/* === DSA section === */
+.DSA {
+  display: none;
+  width: 90%;
+  margin: 0 auto;
+  color: #00ff88;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* Hide non-active sections */
+.projects, .DSA {
+  display: none;
+}
+
+/* === Fully responsive (built-in) === */
+@media(max-width: 768px) {
+  #skills {
+    padding: 60px 15px;
+    margin-top: 60px;
+  }
+
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 40px;
+
+  }
+
+  .projects {
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    /* flex-direction: column; */
+    gap: 40px;
+  }
+
+  .projectsContainer{
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    place-items: center;
+  }
+  .project{
+    width: 80%;
+  }
+  .skill {
+    width: 150px;
+    height: 150px;
+
+  }
+
+  .skillSection button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
 }

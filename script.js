@@ -243,5 +243,15 @@ faders.forEach(fader => {
 
 
 
+document.querySelector(".skillBtn").addEventListener("click", () => showSection("skills"));
+document.querySelector(".projectsBtn").addEventListener("click", () => showSection("projects"));
+document.querySelector(".DSABtn").addEventListener("click", () => showSection("DSA"));
+
+function showSection(section) {
+  document.querySelector(".skills").style.display = section === "skills" ? "grid" : "none";
+  document.querySelector(".projects").style.display = section === "projects" ? "grid" : "none";
+  document.querySelector(".DSA").style.display = section === "DSA" ? "block" : "none";
+}
+
 
 
