@@ -5,6 +5,8 @@
     box-sizing: border-box;
     
 }
+
+
 html{
     scroll-behavior: smooth;
 }
@@ -355,7 +357,7 @@ iframe{
 
 /* Each skill card */
 .skill {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.616);
   border: 2px solid #00ff88;
   border-radius: 15px;
   box-shadow: 0 0 15px #00ff88;
@@ -367,6 +369,7 @@ iframe{
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  color: black;
 }
 
 .skill:hover {
@@ -612,4 +615,27 @@ iframe{
     /* width: 75%; */
     display: none;
   }
+}
+
+
+.project .links{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  /* border: 2px solid white; */
+  padding: 10px;
+  margin: 10px;
+  
+}
+
+.project .links a{
+  background: #00ff88;
+  min-width: 40%;
+  font-size: 20px;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  /* box-shadow: 0px 5px 0px 5px #00ff88; */
 }
